@@ -1,0 +1,4 @@
+BLSegmentedControl
+==================
+
+egmentedControl using UIButtons.
