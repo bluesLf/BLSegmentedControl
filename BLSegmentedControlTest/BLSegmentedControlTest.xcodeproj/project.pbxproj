@@ -18,6 +18,12 @@
 		18B9A3CB172BA33300AD38B0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B9A3CA172BA33300AD38B0 /* Default-568h@2x.png */; };
 		18B9A3DB172BA57300AD38B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B9A3DA172BA57300AD38B0 /* ViewController.m */; };
 		18B9A3E2172BACD000AD38B0 /* BLSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B9A3E1172BACD000AD38B0 /* BLSegmentedControl.m */; };
+		18D168C81733DC0A004B1BAE /* segmented_dividing_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D168C01733DC0A004B1BAE /* segmented_dividing_line.png */; };
+		18D168C91733DC0A004B1BAE /* segmented_dividing_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D168C11733DC0A004B1BAE /* segmented_dividing_line@2x.png */; };
+		18D168CA1733DC0A004B1BAE /* segmented_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D168C21733DC0A004B1BAE /* segmented_selected.png */; };
+		18D168CB1733DC0A004B1BAE /* segmented_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D168C31733DC0A004B1BAE /* segmented_selected@2x.png */; };
+		18D168CC1733DC0A004B1BAE /* segmented.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D168C41733DC0A004B1BAE /* segmented.png */; };
+		18D168CD1733DC0A004B1BAE /* segmented@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18D168C51733DC0A004B1BAE /* segmented@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +44,12 @@
 		18B9A3DA172BA57300AD38B0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		18B9A3E0172BACD000AD38B0 /* BLSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLSegmentedControl.h; sourceTree = "<group>"; };
 		18B9A3E1172BACD000AD38B0 /* BLSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLSegmentedControl.m; sourceTree = "<group>"; };
+		18D168C01733DC0A004B1BAE /* segmented_dividing_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = segmented_dividing_line.png; sourceTree = "<group>"; };
+		18D168C11733DC0A004B1BAE /* segmented_dividing_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented_dividing_line@2x.png"; sourceTree = "<group>"; };
+		18D168C21733DC0A004B1BAE /* segmented_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = segmented_selected.png; sourceTree = "<group>"; };
+		18D168C31733DC0A004B1BAE /* segmented_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented_selected@2x.png"; sourceTree = "<group>"; };
+		18D168C41733DC0A004B1BAE /* segmented.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = segmented.png; sourceTree = "<group>"; };
+		18D168C51733DC0A004B1BAE /* segmented@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "segmented@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +97,7 @@
 		18B9A3BA172BA33300AD38B0 /* BLSegmentedControlTest */ = {
 			isa = PBXGroup;
 			children = (
+				18D168D71733F432004B1BAE /* images */,
 				18B9A3C3172BA33300AD38B0 /* AppDelegate.h */,
 				18B9A3C4172BA33300AD38B0 /* AppDelegate.m */,
 				18B9A3BB172BA33300AD38B0 /* Supporting Files */,
@@ -116,6 +129,19 @@
 			);
 			name = BLSegmentedControl;
 			path = ../BLSegmentedControl;
+			sourceTree = "<group>";
+		};
+		18D168D71733F432004B1BAE /* images */ = {
+			isa = PBXGroup;
+			children = (
+				18D168C01733DC0A004B1BAE /* segmented_dividing_line.png */,
+				18D168C11733DC0A004B1BAE /* segmented_dividing_line@2x.png */,
+				18D168C21733DC0A004B1BAE /* segmented_selected.png */,
+				18D168C31733DC0A004B1BAE /* segmented_selected@2x.png */,
+				18D168C41733DC0A004B1BAE /* segmented.png */,
+				18D168C51733DC0A004B1BAE /* segmented@2x.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +199,12 @@
 				18B9A3C7172BA33300AD38B0 /* Default.png in Resources */,
 				18B9A3C9172BA33300AD38B0 /* Default@2x.png in Resources */,
 				18B9A3CB172BA33300AD38B0 /* Default-568h@2x.png in Resources */,
+				18D168C81733DC0A004B1BAE /* segmented_dividing_line.png in Resources */,
+				18D168C91733DC0A004B1BAE /* segmented_dividing_line@2x.png in Resources */,
+				18D168CA1733DC0A004B1BAE /* segmented_selected.png in Resources */,
+				18D168CB1733DC0A004B1BAE /* segmented_selected@2x.png in Resources */,
+				18D168CC1733DC0A004B1BAE /* segmented.png in Resources */,
+				18D168CD1733DC0A004B1BAE /* segmented@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +244,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -227,6 +260,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -240,6 +274,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -248,6 +283,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -257,11 +293,14 @@
 		18B9A3CF172BA33300AD38B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BLSegmentedControlTest/BLSegmentedControlTest-Prefix.pch";
 				INFOPLIST_FILE = "BLSegmentedControlTest/BLSegmentedControlTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -269,11 +308,14 @@
 		18B9A3D0172BA33300AD38B0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BLSegmentedControlTest/BLSegmentedControlTest-Prefix.pch";
 				INFOPLIST_FILE = "BLSegmentedControlTest/BLSegmentedControlTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

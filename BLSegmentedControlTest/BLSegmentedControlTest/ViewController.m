@@ -37,7 +37,20 @@
     customizeSegmentedControl.indexChangeBlock = ^(NSInteger index) {
         NSLog(@"%i", index);
     };
+    UIImage *image = [UIImage imageNamed:@"segmented_dividing_line"];
+    customizeSegmentedControl.dividingLineImage = image;
     [self.view addSubview:customizeSegmentedControl];
+    // customize
+    BLSegmentedControl *customizeSegmentedControl2 = [[[BLSegmentedControl alloc] initWithTitles:@[@"Segment1", @"Segment2", @"Segment3"] backgroundImage:[UIImage imageNamed:@"segmented"] selectedBackgroundImage:[UIImage imageNamed:@"segmented_selected"] dividingLineImage:[UIImage imageNamed:@"segmented_dividing_line"]] autorelease];
+    customizeSegmentedControl2.frame = CGRectMake(10, 120, 300, 40);
+    customizeSegmentedControl2.textColor = [UIColor whiteColor];
+    customizeSegmentedControl2.selectedTextColor = [UIColor whiteColor];
+    customizeSegmentedControl2.selectedSegmentIndex = 0;
+    [customizeSegmentedControl2 addTarget:self action:@selector(segmentedControlAction:) forControlEvents:UIControlEventValueChanged];
+    customizeSegmentedControl2.indexChangeBlock = ^(NSInteger index) {
+        NSLog(@"%i", index);
+    };
+    [self.view addSubview:customizeSegmentedControl2];
 }
 
 - (void)viewDidLoad
