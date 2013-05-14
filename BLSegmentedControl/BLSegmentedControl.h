@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^IndexChangeBlock)(NSInteger index);
+typedef void (^ChangeBlock)(NSInteger index);
 
 /*
  SegmentedControl using UIButton. Supported dividing line.
@@ -25,7 +25,7 @@ typedef void (^IndexChangeBlock)(NSInteger index);
 @property (retain, nonatomic) UIFont *font;// default is [UIFont systemFontOfSize:15.0f]
 @property (retain, nonatomic) UIColor *textColor;// default is [UIColor blackColor]
 @property (retain, nonatomic) UIColor *selectedTextColor;// default is [UIColor blackColor]
-@property (copy, nonatomic) IndexChangeBlock indexChangeBlock;// you can also use addTarget:action:forControlEvents:
+@property (copy, nonatomic) ChangeBlock changeBlock;// you can also use addTarget:action:forControlEvents:
 - (id)initWithTitles:(NSArray *)titles backgroundImage:(UIImage *)backgroundImage selectedBackgroundImage:(UIImage *)selectedBackgroundImage dividingLineImage:(UIImage *)dividingLineImage;
 - (id)initWithTitles:(NSArray *)titles backgroundImage:(UIImage *)backgroundImage selectedBackgroundImage:(UIImage *)selectedBackgroundImage;
 - (id)initWithTitles:(NSArray *)titles;

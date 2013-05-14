@@ -27,7 +27,7 @@
     [_font release];
     [_textColor release];
     [_selectedTextColor release];
-    Block_release(_indexChangeBlock);
+    Block_release(_changeBlock);
     //
     [_buttons release];
     [_dividingLines release];
@@ -90,8 +90,8 @@
 #pragma mark - Setters
 - (void)setSelectedSegmentIndex:(NSInteger)selectedSegmentIndex {
     _selectedSegmentIndex = selectedSegmentIndex;
-    if (self.indexChangeBlock) {
-        self.indexChangeBlock(self.selectedSegmentIndex);
+    if (self.changeBlock) {
+        self.changeBlock(self.selectedSegmentIndex);
     }
     [self sendActionsForControlEvents:UIControlEventValueChanged];
     [self updateButtons];
