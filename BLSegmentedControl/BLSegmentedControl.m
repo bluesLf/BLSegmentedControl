@@ -31,7 +31,7 @@
         // set default values
         _selectedSegmentIndex = 0;
         _contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10);
-        _segmentTitles = titles;
+        _segmentTitles = [[NSArray alloc] initWithArray:titles];
         _backgroundImage = backgroundImage;
         _selectedBackgroundImage = selectedBackgroundImage;
         _dividingLineImage = dividingLineImage;
