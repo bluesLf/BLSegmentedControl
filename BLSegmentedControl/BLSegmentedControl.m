@@ -9,44 +9,36 @@
 #import "BLSegmentedControl.h"
 
 @interface BLSegmentedControl ()
-@property (retain, nonatomic) NSMutableArray *buttons;// storing UIButton
-@property (retain, nonatomic) NSMutableArray *dividingLines;// storing dividing Lines
+@property (strong, nonatomic) NSMutableArray *buttons;// storing UIButton
+@property (strong, nonatomic) NSMutableArray *dividingLines;// storing dividing Lines
 @property (assign, nonatomic) CGFloat segmentWidth;// default is 0
 @property (assign, nonatomic) CGFloat segmentHeight;// default is 32
 @end
 
 @implementation BLSegmentedControl
 
-- (void)dealloc {
-    [_segmentTitles release];
-    [_backgroundImage release];
-    [_selectedBackgroundImage release];
-    [_dividingLineImage release];
-    [_selectedDividingLineImage release];
-    [_segmentColor release];
-    [_font release];
-    [_textColor release];
-    [_selectedTextColor release];
-    Block_release(_changeBlock);
-    //
-    [_buttons release];
-    [_dividingLines release];
-    [super dealloc];
-}
 #pragma mark - Init
+- (id)initWithTitles:(NSArray *)titles {
+    return [self initWithTitles:titles backgroundImage:nil selectedBackgroundImage:nil dividingLineImage:nil];
+}
+
+- (id)initWithTitles:(NSArray *)titles backgroundImage:(UIImage *)backgroundImage selectedBackgroundImage:(UIImage *)selectedBackgroundImage {
+    return [self initWithTitles:titles backgroundImage:backgroundImage selectedBackgroundImage:selectedBackgroundImage dividingLineImage:nil];
+}
+
 - (id)initWithTitles:(NSArray *)titles backgroundImage:(UIImage *)backgroundImage selectedBackgroundImage:(UIImage *)selectedBackgroundImage dividingLineImage:(UIImage *)dividingLineImage {
     if (self = [super init]) {
         // set default values
         _selectedSegmentIndex = 0;
         _contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10);
-        _segmentTitles = [titles retain];
-        _backgroundImage = [backgroundImage retain];
-        _selectedBackgroundImage = [selectedBackgroundImage retain];
-        _dividingLineImage = [dividingLineImage retain];
-        _segmentColor = [[UIColor clearColor] retain];
-        _font = [[UIFont systemFontOfSize:15.0f] retain];
-        _textColor = [[UIColor blackColor] retain];
-        _selectedTextColor = [[UIColor blackColor] retain];
+        _segmentTitles = titles;
+        _backgroundImage = backgroundImage;
+        _selectedBackgroundImage = selectedBackgroundImage;
+        _dividingLineImage = dividingLineImage;
+        _segmentColor = [UIColor clearColor];
+        _font = [UIFont systemFontOfSize:15.0f];
+        _textColor = [UIColor blackColor];
+        _selectedTextColor = [UIColor blackColor];
         _segmentWidth = 0;
         _segmentHeight = 32;
         // calculate segment size
@@ -57,17 +49,17 @@
         self.frame = self.bounds;
         _buttons = [[NSMutableArray alloc] init];
         _dividingLines = [[NSMutableArray alloc] init];
-        for (int i = 0; i < count; i++) {
+        for (int i = 0; i < count; i++) {// segment item using button
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             button.tag = i;
             button.adjustsImageWhenHighlighted = NO;
             [button setTitle:titles[i] forState:UIControlStateNormal];
-            [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchDown];
+            [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
             [_buttons addObject:button];
             [self addSubview:button];
         }
         NSUInteger dividingLineNumber = count - 1;
-        [_buttons enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [_buttons enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {// dividing line using button
             if (idx < dividingLineNumber)
             {
                 UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -81,12 +73,6 @@
     return self;
 }
 
-- (id)initWithTitles:(NSArray *)titles backgroundImage:(UIImage *)backgroundImage selectedBackgroundImage:(UIImage *)selectedBackgroundImage {
-    return [self initWithTitles:titles backgroundImage:backgroundImage selectedBackgroundImage:selectedBackgroundImage dividingLineImage:nil];
-}
-- (id)initWithTitles:(NSArray *)titles {
-    return [self initWithTitles:titles backgroundImage:nil selectedBackgroundImage:nil];
-}
 #pragma mark - Setters
 - (void)setSelectedSegmentIndex:(NSInteger)selectedSegmentIndex {
     _selectedSegmentIndex = selectedSegmentIndex;
@@ -99,24 +85,21 @@
 
 - (void)setBackgroundImage:(UIImage *)backgroundImage {
     if (_backgroundImage != backgroundImage) {
-        [_backgroundImage release];
-        _backgroundImage = [backgroundImage retain];
+        _backgroundImage = backgroundImage;
     }
     [self updateButtons];
 }
 
 - (void)setSelectedBackgroundImage:(UIImage *)selectedBackgroundImage {
     if (_selectedBackgroundImage != selectedBackgroundImage) {
-        [_selectedBackgroundImage release];
-        _selectedBackgroundImage = [selectedBackgroundImage retain];
+        _selectedBackgroundImage = selectedBackgroundImage;
     }
     [self updateButtons];
 }
 
 - (void)setDividingLineImage:(UIImage *)dividingLineImage {
     if (_dividingLineImage != dividingLineImage) {
-        [_dividingLineImage release];
-        _dividingLineImage = [dividingLineImage retain];
+        _dividingLineImage = dividingLineImage;
     }
     [self updateDividingLines];
     [self setNeedsLayout];
@@ -124,32 +107,28 @@
 
 - (void)setFont:(UIFont *)font {
     if (_font != font) {
-        [_font release];
-        _font = [font retain];
+        _font = font;
     }
     [self updateButtons];
 }
 
 - (void)setTextColor:(UIColor *)textColor {
     if (_textColor != textColor) {
-        [_textColor release];
-        _textColor = [textColor retain];
+        _textColor = textColor;
     }
     [self updateButtons];
 }
 
 - (void)setSelectedTextColor:(UIColor *)selectedTextColor {
     if (_selectedTextColor != selectedTextColor) {
-        [_selectedTextColor release];
-        _selectedTextColor = [selectedTextColor retain];
+        _selectedTextColor = selectedTextColor;
     }
     [self updateButtons];
 }
 
 - (void)setSegmentColor:(UIColor *)segmentColor {
     if (_segmentColor != segmentColor) {
-        [_segmentColor release];
-        _segmentColor = [segmentColor retain];
+        _segmentColor = segmentColor;
     }
     [self updateButtons];
 }

@@ -18,36 +18,36 @@
 - (void)loadView {
     [super loadView];
      // default
-     BLSegmentedControl *defaultSegmentedControl = [[[BLSegmentedControl alloc] initWithTitles:@[@"Segment1", @"Segment2", @"Segment3"]] autorelease];
+     BLSegmentedControl *defaultSegmentedControl = [[BLSegmentedControl alloc] initWithTitles:@[@"Segment1", @"Segment2", @"Segment3"]];
     defaultSegmentedControl.center = self.view.center;
     defaultSegmentedControl.segmentColor = [UIColor grayColor];
     defaultSegmentedControl.selectedTextColor = [UIColor whiteColor];
      [defaultSegmentedControl addTarget:self action:@selector(segmentedControlAction:) forControlEvents:UIControlEventValueChanged];
-     defaultSegmentedControl.indexChangeBlock = ^(NSInteger index) {
+     defaultSegmentedControl.changeBlock = ^(NSInteger index) {
          NSLog(@"%i", index);
      };
      [self.view addSubview:defaultSegmentedControl];
     // customize
-    BLSegmentedControl *customizeSegmentedControl = [[[BLSegmentedControl alloc] initWithTitles:@[@"Segment1", @"Segment2", @"Segment3"] backgroundImage:[self imageWithColor:[UIColor yellowColor]] selectedBackgroundImage:[self imageWithColor:[UIColor orangeColor]]] autorelease];
-    customizeSegmentedControl.frame = CGRectMake(10, 60, 300, 40);
+    BLSegmentedControl *customizeSegmentedControl = [[BLSegmentedControl alloc] initWithTitles:@[@"Segment1", @"Segment2", @"Segment3"] backgroundImage:[self imageWithColor:[UIColor yellowColor]] selectedBackgroundImage:[self imageWithColor:[UIColor orangeColor]]];
+    customizeSegmentedControl.frame = CGRectMake(5, 60, 310, 40);
     customizeSegmentedControl.textColor = [UIColor blackColor];
     customizeSegmentedControl.selectedTextColor = [UIColor whiteColor];
     customizeSegmentedControl.selectedSegmentIndex = 1;
     [customizeSegmentedControl addTarget:self action:@selector(segmentedControlAction:) forControlEvents:UIControlEventValueChanged];
-    customizeSegmentedControl.indexChangeBlock = ^(NSInteger index) {
+    customizeSegmentedControl.changeBlock = ^(NSInteger index) {
         NSLog(@"%i", index);
     };
     UIImage *image = [UIImage imageNamed:@"segmented_dividing_line"];
     customizeSegmentedControl.dividingLineImage = image;
     [self.view addSubview:customizeSegmentedControl];
     // customize
-    BLSegmentedControl *customizeSegmentedControl2 = [[[BLSegmentedControl alloc] initWithTitles:@[@"Segment1", @"Segment2", @"Segment3"] backgroundImage:[UIImage imageNamed:@"segmented"] selectedBackgroundImage:[UIImage imageNamed:@"segmented_selected"] dividingLineImage:[UIImage imageNamed:@"segmented_dividing_line"]] autorelease];
-    customizeSegmentedControl2.frame = CGRectMake(10, 120, 300, 40);
+    BLSegmentedControl *customizeSegmentedControl2 = [[BLSegmentedControl alloc] initWithTitles:@[@"Segment1", @"Segment2", @"Segment3"] backgroundImage:[UIImage imageNamed:@"segmented"] selectedBackgroundImage:[UIImage imageNamed:@"segmented_selected"] dividingLineImage:[UIImage imageNamed:@"segmented_dividing_line"]];
+    customizeSegmentedControl2.frame = CGRectMake(15, 120, 290, 40);
     customizeSegmentedControl2.textColor = [UIColor whiteColor];
     customizeSegmentedControl2.selectedTextColor = [UIColor whiteColor];
     customizeSegmentedControl2.selectedSegmentIndex = 0;
     [customizeSegmentedControl2 addTarget:self action:@selector(segmentedControlAction:) forControlEvents:UIControlEventValueChanged];
-    customizeSegmentedControl2.indexChangeBlock = ^(NSInteger index) {
+    customizeSegmentedControl2.changeBlock = ^(NSInteger index) {
         NSLog(@"%i", index);
     };
     [self.view addSubview:customizeSegmentedControl2];
