@@ -17,9 +17,10 @@
 
 - (void)loadView {
     [super loadView];
+    self.view.backgroundColor = [UIColor darkGrayColor];
      // default
      BLSegmentedControl *defaultSegmentedControl = [[BLSegmentedControl alloc] initWithTitles:@[@"Segment1", @"Segment2", @"Segment3"]];
-    defaultSegmentedControl.center = self.view.center;
+    defaultSegmentedControl.center = self.view.center;// using center
     defaultSegmentedControl.segmentColor = [UIColor grayColor];
     defaultSegmentedControl.selectedTextColor = [UIColor whiteColor];
      [defaultSegmentedControl addTarget:self action:@selector(segmentedControlAction:) forControlEvents:UIControlEventValueChanged];
@@ -29,7 +30,7 @@
      [self.view addSubview:defaultSegmentedControl];
     // customize
     BLSegmentedControl *customizeSegmentedControl = [[BLSegmentedControl alloc] initWithTitles:@[@"Segment1", @"Segment2", @"Segment3"] backgroundImage:[self imageWithColor:[UIColor yellowColor]] selectedBackgroundImage:[self imageWithColor:[UIColor orangeColor]]];
-    customizeSegmentedControl.frame = CGRectMake(5, 60, 310, 40);
+    customizeSegmentedControl.frame = CGRectMake(5, 80, 310, 40);
     customizeSegmentedControl.textColor = [UIColor blackColor];
     customizeSegmentedControl.selectedTextColor = [UIColor whiteColor];
     customizeSegmentedControl.selectedSegmentIndex = 1;
@@ -42,7 +43,7 @@
     [self.view addSubview:customizeSegmentedControl];
     // customize
     BLSegmentedControl *customizeSegmentedControl2 = [[BLSegmentedControl alloc] initWithTitles:@[@"Segment1", @"Segment2", @"Segment3"] backgroundImage:[UIImage imageNamed:@"segmented"] selectedBackgroundImage:[UIImage imageNamed:@"segmented_selected"] dividingLineImage:[UIImage imageNamed:@"segmented_dividing_line"]];
-    customizeSegmentedControl2.frame = CGRectMake(15, 120, 290, 40);
+    customizeSegmentedControl2.frame = CGRectMake(15, 160, 290, 40);
     customizeSegmentedControl2.textColor = [UIColor whiteColor];
     customizeSegmentedControl2.selectedTextColor = [UIColor whiteColor];
     customizeSegmentedControl2.selectedSegmentIndex = 0;

@@ -31,7 +31,7 @@
         // set default values
         _selectedSegmentIndex = 0;
         _contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 10);
-        _segmentTitles = [[NSArray alloc] initWithArray:titles];
+        _segmentTitles = titles;
         _backgroundImage = backgroundImage;
         _selectedBackgroundImage = selectedBackgroundImage;
         _dividingLineImage = dividingLineImage;
@@ -84,52 +84,38 @@
 }
 
 - (void)setBackgroundImage:(UIImage *)backgroundImage {
-    if (_backgroundImage != backgroundImage) {
-        _backgroundImage = backgroundImage;
-    }
+    _backgroundImage = backgroundImage;
     [self updateButtons];
 }
 
 - (void)setSelectedBackgroundImage:(UIImage *)selectedBackgroundImage {
-    if (_selectedBackgroundImage != selectedBackgroundImage) {
-        _selectedBackgroundImage = selectedBackgroundImage;
-    }
+    _selectedBackgroundImage = selectedBackgroundImage;
     [self updateButtons];
 }
 
 - (void)setDividingLineImage:(UIImage *)dividingLineImage {
-    if (_dividingLineImage != dividingLineImage) {
-        _dividingLineImage = dividingLineImage;
-    }
+    _dividingLineImage = dividingLineImage;
     [self updateDividingLines];
     [self setNeedsLayout];
 }
 
 - (void)setFont:(UIFont *)font {
-    if (_font != font) {
-        _font = font;
-    }
+    _font = font;
     [self updateButtons];
 }
 
 - (void)setTextColor:(UIColor *)textColor {
-    if (_textColor != textColor) {
-        _textColor = textColor;
-    }
+    _textColor = textColor;
     [self updateButtons];
 }
 
 - (void)setSelectedTextColor:(UIColor *)selectedTextColor {
-    if (_selectedTextColor != selectedTextColor) {
-        _selectedTextColor = selectedTextColor;
-    }
+    _selectedTextColor = selectedTextColor;
     [self updateButtons];
 }
 
 - (void)setSegmentColor:(UIColor *)segmentColor {
-    if (_segmentColor != segmentColor) {
-        _segmentColor = segmentColor;
-    }
+    _segmentColor = segmentColor;
     [self updateButtons];
 }
 
